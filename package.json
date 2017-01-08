@@ -1,0 +1,26 @@
+{
+  "name": "randomart-js",
+  "version": "0.1.0",
+  "description": "Generates a randomart image from a buffer",
+  "main": "./src/randomart.js",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Risto-Stevcev/randomart-js.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "randomart",
+    "openssh"
+  ],
+  "author": "Risto Stevcev",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
