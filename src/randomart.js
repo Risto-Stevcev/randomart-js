@@ -54,6 +54,11 @@ var render = function render(hash, options) {
     return walk.reduce(updateGrid, grid)
 }
 
+// Converts a hex string to a buffer
+var hexToBuffer = function hexToBuffer(str) {
+  return Buffer.from(str, 'hex')
+}
+
 // The reducer for converting the walk into the grid
 var gridReducer = function gridReducer(values) {
   return function updateGrid(grid, coord, idx, walk) {
@@ -215,6 +220,7 @@ var walkToNumeric = function(walk, width, height) {
 
 module.exports = {
   render: render,
+  hexToBuffer: hexToBuffer,
   gridToString: gridToString,
   bufferToBinaryPairs: bufferToBinaryPairs,
   getWalk: getWalk,
