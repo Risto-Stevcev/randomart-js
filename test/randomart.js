@@ -12,11 +12,12 @@ let buffers = examples.map(e => Buffer.from(e, 'hex'))
 
 describe('bufferToBinaryPairs', function() {
   it('should produce the correct binary pairs from a buffer', function() {
-    expect(randomart.bufferToBinaryPairs(buffers[0]))
-      .to.deep.equal(['00','11','11','11','00','01','01','10','00','00','11','10','01','00','00','11'
-                     ,'01','01','10','11','00','00','11','10','00','10','01','10','00','11','11','01'
-                     ,'00','10','01','01','11','00','00','01','01','10','01','10','10','01','11','01'
-                     ,'11','01','01','10','10','11','10','11','11','11','01','10','11','01','11','10'])
+    var expected = ['00','11','11','11','00','01','01','10','00','00','11','10','01','00','00','11'
+                   ,'01','01','10','11','00','00','11','10','00','10','01','10','00','11','11','01'
+                   ,'00','10','01','01','11','00','00','01','01','10','01','10','10','01','11','01'
+                   ,'11','01','01','10','10','11','10','11','11','11','01','10','11','01','11','10']
+
+    expect(randomart.bufferToBinaryPairs(buffers[0])).to.deep.equal(expected)
   })
 })
 
@@ -46,6 +47,7 @@ describe('render', function() {
                    ,[' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','E','.']]
 
     expect(randomart.render(buffers[0])).to.deep.equal(expected)
+    expect(randomart.render(examples[0])).to.deep.equal(expected)
     expect(R.last(randomart.render(buffers[0], { trail: true }))).to.deep.equal(expected)
   })
 

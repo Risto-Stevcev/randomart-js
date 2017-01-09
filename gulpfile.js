@@ -25,3 +25,5 @@ gulp.task('minify', ['compile'], function() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
 })
+
+gulp.task('default', ['minify'])

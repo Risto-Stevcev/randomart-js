@@ -8,7 +8,9 @@
     "url": "https://www.github.com/Risto-Stevcev/randomart-js.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha",
+    "compile": "./node_modules/.bin/gulp",
+    "clean": "./node_modules/.bin/gulp clean"
   },
   "keywords": [
     "randomart",

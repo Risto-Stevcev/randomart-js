@@ -8,12 +8,12 @@ var defaults = {
   values: [' ', '.', 'o', '+', '=', '*', 'B', 'O', 'X', '@', '%', '&', '#', '/', '^']
 }
 
-// Renders the randomart image from a given buffer
-var render = function render(buffer, options) {
+// Renders the randomart image from a given hash
+var render = function render(hash, options) {
   var options = R.merge(defaults, typeof options === 'object' ? options : {})
 
-  if (!(buffer instanceof Buffer) || buffer.length === 0) {
-    throw TypeError('You must pass in a non-zero length buffer')
+  if (!(hash instanceof Buffer || typeof hash === 'string') || hash.length === 0) {
+    throw TypeError('You must pass in a non-zero length hash or string')
   }
   if (!(typeof options.height === 'number') || !(typeof options.width  === 'number')) {
     throw TypeError('The height and width options must be numbers')
@@ -30,8 +30,8 @@ var render = function render(buffer, options) {
   if ((options.height % 2 !== 1) || (options.width  % 2 !== 1)) {
     throw Error('The height and width options must be odd numbers')
   }
-  if (buffer.length % 2 !== 0) {
-    throw Error('The buffer length must have an even number')
+  if (hash.length % 2 !== 0) {
+    throw Error('The hash length must have an even number')
   }
 
 
@@ -40,7 +40,7 @@ var render = function render(buffer, options) {
     , trail  = options.trail  || false
     , values = options.values || [' ', '.', 'o', '+', '=', '*', 'B', 'O', 'X', '@', '%', '&', '#', '/', '^']
 
-  var pairs    = bufferToBinaryPairs(buffer)
+  var pairs    = bufferToBinaryPairs(typeof hash === 'string' ? Buffer.from(hash, 'hex') : hash)
     , walk     = getWalk(pairs, width, height)
     , grid     = R.repeat([], height).map(function(line) { return R.repeat(' ', width) })
 
