@@ -1,0 +1,15 @@
+#randomart tr:nth-child(even) td:nth-child(even),
+#randomart tr:nth-child(odd) td:nth-child(odd)
+{
+  background-color: #fefefe;
+}
+
+#randomart td {
+  width: 1em;
+  font-family: "monospace";
+  text-align: center;
+}
+
+#randomart tr {
+  height: 1.5em;
+}
