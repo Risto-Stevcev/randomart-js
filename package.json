@@ -1,7 +1,7 @@
 {
   "name": "randomart-js",
-  "version": "0.1.0",
-  "description": "Generates a randomart image from a buffer",
+  "version": "0.1.1",
+  "description": "Generates a randomart image from a buffer or hexadecimal string",
   "main": "./src/randomart.js",
   "repository": {
     "type": "git",

@@ -1,10 +1,13 @@
 # randomart-js
 
-Generates a randomart image from a buffer. This implementation is based off of the "drunken bishop" paper:
+Generates a randomart image from a buffer or hexadecimal string. This implementation is based off of the "drunken bishop" paper:
 
-[The drunken bishop: An analysis of the OpenSSH fingerprint visualization algorithm][1]  
+[The drunken bishop: An analysis of the OpenSSH fingerprint visualization algorithm][paper]  
 *Dirk Loss, Tobias Limmer<sup>&dagger;</sup>, Alexander von Gernler<sup>&Dagger;</sup>*
 
+Here is an example animation of the walk for the hash used in the paper:
+
+![Example animation][example]
 
 ## Usage
 
@@ -71,4 +74,6 @@ Takes a walk in the format from `getWalk` and returns the walk formatted in the 
 
 See the `example` folder and this [JSbin](http://jsbin.com/dugenuwiqe/1/embed?live)
 
-[1]: http://www.dirk-loss.de/sshvis/drunken_bishop.pdf
+
+[paper]: http://www.dirk-loss.de/sshvis/drunken_bishop.pdf
+[example]: https://raw.githubusercontent.com/Risto-Stevcev/randomart-js/master/example.gif
